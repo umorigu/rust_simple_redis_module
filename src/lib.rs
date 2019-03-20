@@ -18,8 +18,6 @@ pub type RedisModuleCmdFunc = extern "C" fn(
 ) -> c_int;
 
 extern "C" {
-    #[allow(improper_ctypes)]
-    #[link(name = "redismodule", kind = "static")]
     pub fn Export_RedisModule_Init(
         ctx: *mut RedisModuleCtx,
         modulename: *const u8,
